@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .form-control::placeholder {
+            font-style: italic;
+        }
+
+        .form-floating input {
+            border-radius: 20px;
+            box-shadow: inset 8px 8px 15px rgba(255, 255, 255, 0.1), inset -8px -8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .form-floating input:focus {
+            border: 2px solid #2575fc;
+            box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.3), inset -4px -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            border-radius: 20px;
+            padding: 12px;
+            font-size: 1rem;
+            background-color: #2575fc;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #6a11cb;
+        }
+
+        .text-info a {
+            color: #2575fc;
+        }
+
+        .text-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .invalid-feedback {
+            font-size: 0.875rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container py-4">
+        <h2 class="text-center text-info mb-4">Sign In</h2>
+
+        <form class="w-75 mx-auto bg-white p-4 rounded shadow-sm" id="signInForm">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+                <label for="email">Email Address</label>
+                <div id="emailError" class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <label for="password">Password</label>
+                <div id="passwordError" class="invalid-feedback">Password must be at least 6 characters long.</div>
+            </div>
+            <button class="btn btn-primary w-100" type="submit">Sign In</button>
+        </form>
+
+        <p class="text-center mt-3">Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+
+    <script src="signin.js"></script>
+</body>
+
+</html>
