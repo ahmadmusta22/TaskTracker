@@ -1,145 +1,113 @@
 body {
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    font-family: 'Arial', sans-serif;
-    color: #fff;
+    background: #f5f5f5; /* Light gray background */
+    font-family: 'Quicksand', sans-serif; /* Chill, friendly font */
+    color: #333; /* Dark gray text */
     overflow-x: hidden;
+    min-height: 100vh; /* Full height */
 }
 
 .container {
-    padding-top: 50px;
+    padding-top: 80px; /* Space at the top */
 }
 
-h1 {
+h2 {
     text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #4682b4; /* Steel blue heading */
+    margin-bottom: 40px;
+}
+
+/* Form input styles */
+.form-control {
+    border-radius: 8px; /* Slightly rounded corners */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 12px;
+    background-color: #fff; /* Plain white input */
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border: 1px solid #4682b4; /* Steel blue on focus */
+    box-shadow: none; /* No shadow for simplicity */
+    outline: none;
 }
 
 .form-control::placeholder {
-    font-style: italic;
+    color: #999; /* Light gray placeholder */
+    font-style: normal;
 }
 
-.form-floating input,
-.form-floating textarea {
-    border-radius: 20px;
-    box-shadow: inset 8px 8px 15px rgba(255, 255, 255, 0.1), inset -8px -8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+/* Floating label styles */
+.form-floating label {
+    color: #666; /* Medium gray for labels */
+    padding-left: 12px;
 }
 
-.form-floating input:focus,
-.form-floating textarea:focus {
-    border: 2px solid #2575fc;
-    box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.3), inset -4px -4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.search-bar {
-    border-radius: 50px;
-    padding: 10px 20px;
-    background: #ffffff;
-    border: none;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
-.task-card {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
-    padding: 20px;
-    margin: 15px 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.task-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.task-header {
-    font-size: 1.5rem;
-    color: #2575fc;
-}
-
-.task-actions {
-    text-align: right;
-    margin-top: 10px;
-}
-
-.task-actions button {
-    transition: all 0.3s ease;
-}
-
-.task-actions button:hover {
-    transform: scale(1.1);
-}
-
-.btn-info,
-.btn-danger {
-    border-radius: 20px;
-    padding: 10px 25px;
+/* Button styles */
+.btn-primary {
+    border-radius: 8px;
+    padding: 12px;
     font-size: 1rem;
+    background-color: #4682b4; /* Steel blue button */
+    border: none;
+    color: #fff; /* White text */
+    transition: all 0.3s ease;
 }
 
-.task-card .card-details {
-    display: none;
-    transition: opacity 0.3s ease;
+.btn-primary:hover {
+    background-color: #5a9bd4; /* Lighter steel blue on hover */
 }
 
-.task-card.show-details .card-details {
-    display: block;
-    opacity: 1;
+/* Links in text-info */
+.text-info a {
+    color: #4682b4; /* Steel blue link */
+    text-decoration: none;
 }
 
-/* Hover effect for task cards */
-.task-card .flip-card {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    perspective: 1000px;
+.text-info a:hover {
+    color: #5a9bd4; /* Lighter on hover */
+    text-decoration: underline;
 }
 
-.task-card .flip-card-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
+/* Error feedback */
+.invalid-feedback {
+    font-size: 0.875rem;
+    color: #d9534f; /* Muted red for errors */
 }
 
-.task-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+/* Form container */
+form {
+    background-color: #fff; /* Plain white form */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Light shadow */
+    padding: 30px;
 }
 
-.task-card .flip-card-front,
-.task-card .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 20px;
+/* Adjustments for specific buttons */
+.btn-info {
+    background-color: #4682b4; /* Steel blue for Add Task button */
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s ease;
 }
 
-.task-card .flip-card-front {
-    background-color: #fff;
-    padding: 15px;
+.btn-info:hover {
+    background-color: #5a9bd4; /* Lighter steel blue on hover */
 }
 
-.task-card .flip-card-back {
-    background-color: #2575fc;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 20px;
-    transform: rotateY(180deg);
+.btn-danger {
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s ease;
 }
 
-#signOutBtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: none;
+.btn-danger:hover {
+    background-color: #c9302c; /* Slightly darker red on hover */
+}
+
+/* Search bar specific styling */
+.search-bar {
+    margin-bottom: 20px; /* Add some space below search bar */
 }
